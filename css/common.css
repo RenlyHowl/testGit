@@ -1,0 +1,22 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+main {
+  background-color: yellow;
+  padding: 0 20px;
+  /* font-size: 48px; */
+}
+h1 {
+  font-size: 2em;
+}
+
+@font-face {
+  font-family: 'iconfont';  /* project id 2367902 */
+  src: url('//at.alicdn.com/t/font_2367902_yz58jacdox.eot');
+  src: url('//at.alicdn.com/t/font_2367902_yz58jacdox.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_2367902_yz58jacdox.woff2') format('woff2'),
+  url('//at.alicdn.com/t/font_2367902_yz58jacdox.woff') format('woff'),
+  url('//at.alicdn.com/t/font_2367902_yz58jacdox.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_2367902_yz58jacdox.svg#iconfont') format('svg');
+}

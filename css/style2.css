@@ -1,0 +1,24 @@
+.loading {
+  height: 20px;
+  background-color: green;
+  width: 0;
+  line-height: 20px;
+  
+}
+
+#node {
+  height: 40px;
+  background-color: yellow;
+  /* margin: 0 20px; */
+  border: 20px solid black;
+}
+
+.test {
+  height: 40px;
+  background-color: red;
+  /* transform: translateY(20px); */
+}
+
+form {
+  transform: translateY(20px);
+}

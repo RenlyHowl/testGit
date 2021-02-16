@@ -1,0 +1,15 @@
+@media screen and (orientation: landscape) and (min-width: 1200px) {
+  ul, li {
+    list-style: none;
+    list-style-position: inside;
+  }
+  ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+  li {
+    flex: 1;
+  }
+
+}

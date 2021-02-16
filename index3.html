@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="js/style3.js"></script>
+  <style media="screen">
+    * {
+      padding: 0;
+      margin: 0;
+    }
+    html, body {
+      height: 2000px;
+    }
+    main {
+      width: 400px;
+      height: 400px;
+      position: absolute;
+      top: 42px;
+      left: 20px;
+      /* transform: translate(20px, 42px); */
+      background-color: red;
+      overflow:auto;
+    }
+    button {
+      transform: translateX(20px);
+    }
+  </style>
+</head>
+<body>
+  <button>main元素进行滑动</button>
+  <main>
+    作者：hijiangtao
+链接：https://zhuanlan.zhihu.com/p/346935530
+来源：知乎
+著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
+第一种方案是通过记录 DOM 的每次变更，并将内容序列化下来，
+然后在沙箱中还原并回放这些 UI 变化。这种方案的优点之一是能够给 DOM 创建快照的概念，
+在应用每一次状态变化后进行收集，把这个序列串起来后我们便可以灵活掌握回放速度、并针对关键性
+节点进行自定义回放。在社区开源方案中，这类技术最成熟的莫过于 rrweb https://github.com/rrweb-io/rrweb，
+此外若干互联网企业也有提供一些商业解决方案，但技术设计上大同小异，大致都可以拆分为 DOM 序列化、构建快
+序列、反序列化回放以及运行沙箱环境等四方面。另一种可行方案，从我们的调研结果来看，是将用户侧所有数据收集
+起来，然后在一个可控运行环境下严格按照校准时间对用户事件操作进行派发，从而控制回放。这里主要分为两部分，一
+方面因为我们通过派发事件来重演用户的行为，便需要高精度计时器以及完善的用户事件收集策略；另一方面，
+由于要保证应用状态在两端的变化一致性，只严格触发用户的操作还不够，我们还要将任何应用与网络之前的交互操
+作（请求与响应内容）精准对齐，所以我们需要拦截所有请求、即时的前端构建产物以及用户操作序列等等。第二种
+方案由于可以近乎模拟用户侧运行时的状态变化，相当于将当时的用户整个搬到了我们面前，因此可以方便开发同学
+进一步调试。在社区开源方案中，我们没有找到类似的实现。
+  </main>
+</body>
+</html>

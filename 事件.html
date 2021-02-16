@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="js/事件.js"></script>
+  <style media="screen">
+    * {
+      padding: 0;
+      margin: 0;
+    }
+    main {
+      height: 400px;
+      width: 600px;
+      background-color: red;
+      margin: 0 auto;
+      
+    }
+    div {
+      width: 200px;
+      height: 200px;
+      background-color: yellow;
+      transform: translate(200px, 100px);
+    }
+  </style>
+</head>
+<body>
+  <main onclick="show(this)" class="center red">
+    12333333333
+    <div></div>
+  </main>
+  <script>
+    function show(e) {
+      console.log('第一个');
+      console.log(e)
+      console.log(event)
+      // console.log(typeof e)
+    }
+    // document.querySelector('div').onclick = function(e) {
+    //   e.stopPropagation();
+    //   console.log(e);
+    // }
+  </script>
+</body>
+</html>
